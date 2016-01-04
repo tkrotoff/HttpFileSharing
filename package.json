@@ -1,0 +1,36 @@
+{
+  "name": "HttpFileSharing",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/tkrotoff/HttpFileSharing.git"
+  },
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+
+  "dependencies": {
+    "typescript": "latest",
+    "tslint": "latest",
+    "DefinitelyTyped": "DefinitelyTyped/DefinitelyTyped",
+
+    "express": "^4",
+    "morgan": "latest",
+    "compression": "latest",
+    "basic-auth": "latest",
+    "minimist": "latest",
+    "serve-index": "latest",
+    "serve-static": "latest"
+  },
+
+  "devDependencies": {
+  },
+
+  "engines": {
+    "node": "^4"
+  },
+
+  "scripts": {
+    "clean": "rm app.js npm-debug.log",
+    "build": "tsc"
+  }
+}
