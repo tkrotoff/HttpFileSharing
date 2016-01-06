@@ -1,11 +1,11 @@
-/// <reference path="node_modules/DefinitelyTyped/node/node.d.ts" />
-/// <reference path="node_modules/DefinitelyTyped/express/express.d.ts" />
-/// <reference path="node_modules/DefinitelyTyped/morgan/morgan.d.ts" />
-/// <reference path="node_modules/DefinitelyTyped/compression/compression.d.ts" />
-/// <reference path="node_modules/DefinitelyTyped/basic-auth/basic-auth.d.ts" />
-/// <reference path="node_modules/DefinitelyTyped/minimist/minimist.d.ts" />
-/// <reference path="node_modules/DefinitelyTyped/serve-index/serve-index.d.ts" />
-/// <reference path="node_modules/DefinitelyTyped/serve-static/serve-static.d.ts" />
+/// <reference path="../node_modules/DefinitelyTyped/node/node.d.ts" />
+/// <reference path="../node_modules/DefinitelyTyped/express/express.d.ts" />
+/// <reference path="../node_modules/DefinitelyTyped/morgan/morgan.d.ts" />
+/// <reference path="../node_modules/DefinitelyTyped/compression/compression.d.ts" />
+/// <reference path="../node_modules/DefinitelyTyped/basic-auth/basic-auth.d.ts" />
+/// <reference path="../node_modules/DefinitelyTyped/minimist/minimist.d.ts" />
+/// <reference path="../node_modules/DefinitelyTyped/serve-index/serve-index.d.ts" />
+/// <reference path="../node_modules/DefinitelyTyped/serve-static/serve-static.d.ts" />
 
 import * as express from 'express';
 import * as logger from 'morgan';
@@ -32,9 +32,9 @@ if (argv.h || argv.help) {
     'usage: HttpFileSharing [path] [options]',
     '',
     'options:',
-    '  -p           Port to use [8080]',
-    '  --user       User name for basic authentication [none]',
-    '  --pass       Password for basic authentication [none]',
+    '  -p           Port to use',
+    '  --user       User name for basic authentication',
+    '  --pass       Password for basic authentication',
     '',
     '  -h --help    Print this list and exit.'
   ].join('\n'));
@@ -42,7 +42,7 @@ if (argv.h || argv.help) {
 }
 
 const path = argv._[0];
-const port = argv.p || parseInt(process.env.PORT, 10);
+const port = argv.p;
 const username = argv.user;
 const password = argv.pass;
 

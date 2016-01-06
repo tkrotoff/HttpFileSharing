@@ -16,10 +16,25 @@ The day [http-server](https://github.com/indexzero/http-server) provides [basic 
 ## How to use
 
 ```Shell
+# Build and copy binaries from https://github.com/tkrotoff/HttpFileSharing
+# to /usr/local/bin and /usr/local/lib/node_modules
+npm install -g tkrotoff/HttpFileSharing
+
+# Modify HttpFileSharing.plist with your parameters
+vim /usr/local/lib/node_modules/HttpFileSharing/HttpFileSharing.plist
+
+sudo cp /usr/local/lib/node_modules/HttpFileSharing/HttpFileSharing.plist /Library/LaunchDaemons
+
+sudo launchctl unload -w /Library/LaunchDaemons/HttpFileSharing.plist
+sudo launchctl load -w /Library/LaunchDaemons/HttpFileSharing.plist
+```
+
+## Debug
+
+```Shell
 npm install
 npm run clean
 npm run build
-node app.js -h
-node app.js ~/Public -p 8080 --user login --pass password
-sudo node app.js ~/Public -p 80 --user login --pass password
+bin/HttpFileSharing ~/Public -p 8080 --user login --pass password
+sudo bin/HttpFileSharing ~/Public -p 80 --user login --pass password
 ```

@@ -8,6 +8,11 @@
   "license": "MIT",
   "private": true,
 
+  "main": "lib/HttpFileSharing.js",
+  "bin": {
+    "HttpFileSharing": "bin/HttpFileSharing"
+  },
+
   "dependencies": {
     "typescript": "latest",
     "tslint": "latest",
@@ -30,7 +35,8 @@
   },
 
   "scripts": {
-    "clean": "rm app.js npm-debug.log",
-    "build": "tsc"
+    "clean": "rm lib/*.js",
+    "build": "tsc",
+    "postinstall": "npm run build"
   }
 }

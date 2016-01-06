@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>HttpFileSharing</string>
+
+	<key>ProgramArguments</key>
+	<array>
+		<!--
+		  PATH for root does not contain /usr/local/bin (PATH=/usr/bin:/bin:/usr/sbin:/sbin)
+		  so let's just call node directly
+		-->
+		<string>/usr/local/bin/node</string>
+
+		<string>/usr/local/bin/HttpFileSharing</string>
+		<string>PATH</string> <!-- Change me! -->
+		<string>-p</string>
+		<string>80</string>
+		<string>--user</string>
+		<string>USERNAME</string> <!-- Change me! -->
+		<string>--pass</string>
+		<string>PASSWORD</string> <!-- Change me! -->
+	</array>
+
+	<key>KeepAlive</key>
+	<true/>
+
+	<!--
+	<key>Sockets</key>
+	<dict>
+		<key>Listeners</key>
+		<dict>
+			<key>SockServiceName</key>
+			<string>http</string>
+		</dict>
+	</dict>
+	-->
+
+	<key>StandardOutPath</key>
+	<string>/var/log/HttpFileSharing.log</string>
+	<key>StandardErrorPath</key>
+	<string>/var/log/HttpFileSharing.log</string>
+</dict>
+</plist>
